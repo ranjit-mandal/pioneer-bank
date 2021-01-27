@@ -32,7 +32,7 @@
             <div class="col-md-4">
                 <div class="withdraw status">
                     <h5>Withdraw</h5>
-                <h2>$00</h2>
+                <h2>$ <span id="preWithdraw">00</span></h2>
                 </div>
             </div>
             <div class="col-md-4">
@@ -42,12 +42,12 @@
                 </div>
             </div>
         </div>
-        
+
 <div class="row">
 <div class="col-md-6">
 <div class="submit-area">
     <h3>Deposit</h3>
-<input id="depositAmount" type="text" placeholder="$ amount you want to deposit" class="form-control">
+<input id="depositAmount" type="number" placeholder="$ amount you want to deposit" class="form-control">
 <br>
 <button id="addDeposit" class="btn-success">Deposit</button>
 </div>
@@ -56,45 +56,17 @@
 <div class="col-md-6">
 <div class="submit-area">
     <h3>Withdraw</h3>
-<input type="text" placeholder="$ amount you want to withdraw" class="form-control">
+<input id="withdrawAmount" type="number" placeholder="$ amount you want to withdraw" class="form-control">
 <br>
-<button  class="btn-success">Withdraw</button>
+<button id="addWithdraw" class="btn-success">Withdraw</button>
 </div>
 </div>
-        </div>
-    </div>
+</div>
+</div>
 
-<script>
-    // login button event handler
-    const loginBtn = document.getElementById("login");
-    loginBtn.addEventListener("click", function(){
-    const loginArea = document.getElementById("login-area");
-    loginArea.style.display = "none";
-    const transactionArea = document.getElementById("transaction-area");
-    transactionArea.style.display = "block";
-    })
-
-    //deposit button event handler
-const depositBtn = document.getElementById('addDeposit');
-depositBtn.addEventListener("click", function(){
-    const depositAmount = document.getElementById("depositAmount").value;
-    const depositNumber = parseFloat(depositAmount);
-
-    const currentDeposit = document.getElementById("currentDeposit").innerText;
-    const currentDepositNumber = parseFloat(currentDeposit);
-    const totalDeposit = depositNumber + currentDepositNumber;
-    document.getElementById("currentDeposit").innerText = totalDeposit;
-    document.getElementById("depositAmount").value = "";
-
-const currentBalance = document.getElementById('currentBalance').innerText;
-const currentBalanceNumber = parseFloat(currentBalance);
-const totalBalance = depositNumber + currentBalanceNumber;
-document.getElementById('currentBalance').innerText = totalBalance;
-
-
-
-})
-</script>
-
+<script src="js/pioneer-bank.js"></script>
 </body>
 </html>
+
+
+
